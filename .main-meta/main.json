@@ -4,8 +4,8 @@
     "content": {
         "metaDataVersion": "1.1.0",
         "name": "com.microchip.mcu8.mplabx.project.avr128da48-cnano-printf-float-mplab-mcc",
-        "version": "1.0.0",
-        "displayName": "AVR128DA48 Demo of printf With Floating Point Numbers Using USART and MCC",
+        "version": "1.0.1",
+        "displayName": "Demo of printf With Floating Point Numbers Using USART",
         "projectName": "avr128da48-cnano-printf-float-mplab-mcc",
         "shortDescription": "This repository contains a basic printf demo using the USART interface to demonstrate the floating-point usage.",
         "ide": {
@@ -39,12 +39,13 @@
         "author": "Microchip",
         "subcategories": [
 			[
-				"peripherals", "USART"
+				"Peripherals",
+				"USART"
 			]
 		],
         "peripherals": [ "USART"
         ],
-        "keywords": [ "Serial Communications"
+        "keywords": [ "Serial Communication"
         ],
 		"additionalData": {
 			"longDescription": {
