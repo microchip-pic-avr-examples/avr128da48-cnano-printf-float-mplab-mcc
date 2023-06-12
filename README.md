@@ -1,17 +1,10 @@
-[![MCHP](images/microchip.png)](https://www.microchip.com)
+<!-- Please do not change this html logo with link -->
+
+<a href="https://www.microchip.com" rel="nofollow"><img src="images/microchip.png" alt="MCHP" width="300"/></a>
 
 # AVR128DA48 Demo of `printf` With Floating Point Numbers Using USART and MCC
 
 This repository provides an MPLAB® X solution for a basic `printf` demo using the USART interface to demonstrate the floating point usage.<br>
-
-Problem: In XC8, with the default settings, the `printf` does not display the float and double numbers but puts a '?' in their place.
-
-The behavior is caused by the avr-libc library which, by default, does not include support for real numbers.<br>
-This is due to the huge size of the floating point support that is not used often.
-
-Implementation: Put additional options to the linker which can be done in the **Properties** tab of the project: <br>
-#### -Wl,-u,vfprintf -lprintf_flt -lm
-<br><img src="images/linker_configuration.png">
 
 This application provides an example use of floating point numbers. It prints on the serial value incremented by 0.5 and toggles the on-board LED every second.
 
@@ -22,12 +15,13 @@ More details and code examples on the AVR128DA48 can be found at the following l
 
 
 ## Software Used
-- MPLAB® X IDE 5.45 or newer [(microchip.com/mplab/mplab-x-ide)](http://www.microchip.com/mplab/mplab-x-ide)
-- MPLAB® XC8 2.31 or newer [(microchip.com/mplab/compilers)](http://www.microchip.com/mplab/compilers)
-- MPLAB® Code Configurator (MCC) 4.0.2 or newer [(microchip.com/mplab/mplab-code-configurator)](https://www.microchip.com/mplab/mplab-code-configurator)
-- AVR-Dx_DFP 1.6.88
-- 8-bit AVR MCUs Lib version 2.5.0
-- Terminal software (Teraterm, Putty, Hyperterm, etc.)
+- [MPLAB® X IDE](http://www.microchip.com/mplab/mplab-x-ide) v6.10 or newer
+- [MPLAB® XC8](http://www.microchip.com/mplab/compilers) v2.41 or newer
+- [AVR-Dx Series Device Pack](https://packs.download.microchip.com/) v2.3.272 or newer
+- [MPLAB® Code Configurator Melody](https://www.microchip.com/en-us/tools-resources/configure/mplab-code-configurator/melody) v2.5.0 or newer
+- AVR Devices Library v4.7.0 or newer
+- Content Manager v2.3.7 or newer
+- MPLAB® X Data Visualizer Plug-in
 
 ## Hardware Used
 - AVR128DA48 Curiosity Nano [(DM164151)](https://www.microchip.com/Developmenttools/ProductDetails/DM164151)
@@ -38,17 +32,24 @@ The AVR128DA48 Curiosity Nano Development board is used as test platform.
 
 The following configurations must be made for this project:
 
+- System clock configured at 4 MHz
+- USART1:
+	- 115200 baud
+	- 8 data bits
+	- no parity bit
+	- 1 stop bit
+
 |Pin           | Configuration      |
 | :----------: | :----------------: |
 |PC6 (LED0)    | Digital Output     |
 |PC0 (USART_TX)| Digital Output     |
 |PC1 (USART_RX)| Digital Input      |
 
-USART1 is configured for 115200 baud, 8N1 format.
+
 
 ## Operation
 
-To program the Curiosity Nano board with this MPLAB X project, follow the steps provided in the [Program.md](./Program.md) page.
+To program the Curiosity Nano board with this MPLAB® X project, follow the steps provided in the [How to Program the Curiosity Nano Board](#how-to-program-the-curiosity-nano-board) chapter.<br><br>
 
 ## Demo:
 Using Control Panel or the system's configuration tool, identify the serial port number allocated by the OS (COMx, ttySx, etc).
@@ -64,3 +65,39 @@ This image shows the received messages from the start of the program. The progra
 ## Summary
 
 The demo shows a `printf` demo using floating point numbers on the AVR128DA48 Curiosity Nano Board.
+
+[Back to top](#getting-started-with-usart-using-the-avr64dd32-microcontroller-using-mcc-melody)<br>
+
+
+## How to Program the Curiosity Nano Board
+
+This chapter shows how to use the MPLAB® X IDE to program an AVR® device with an Example_Project.X. This can be applied to any other projects.
+
+- Connect the board to the PC
+
+- Open the Example_Project.X project in MPLAB® X IDE
+
+- Set the Example_Project.X project as main project
+
+  - Right click the project in the **Projects** tab and click **Set as Main Project**
+    <br><img src="images/Program_Set_as_Main_Project.PNG" width="600">
+
+- Clean and build the Example_Project.X project
+
+  - Right click the **Example_Project.X** project and select **Clean and Build**
+    <br><img src="images/Program_Clean_and_Build.PNG" width="600">
+
+- Select **AVRxxxxx Curiosity Nano** in the Connected Hardware Tool section of the project settings:
+
+  - Right click the project and click **Properties**
+  - Click the arrow under the Connected Hardware Tool
+  - Select the **AVRxxxxx Curiosity Nano** (click the **SN**), click **Apply** and then **OK**:
+    <br><img src="images/Program_Tool_Selection.PNG" width="600">
+
+- Program the project to the board
+  - Right click the project and then **Make and Program Device**
+    <br><img src="images/Program_Make_and_Program_Device.PNG" width="600">
+
+<br>
+
+- [Back to top](#getting-started-with-usart-using-the-avr64dd32-microcontroller-using-mcc-melody)<br>
