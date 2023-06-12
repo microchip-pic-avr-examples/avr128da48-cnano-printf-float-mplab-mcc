@@ -1,15 +1,16 @@
- /*
- * MAIN Generated Driver File
+/**
+ * utils Header File
  * 
- * @file main.c
+ * @file system.h
  * 
- * @defgroup main MAIN
- * 
- * @brief This is the generated driver implementation file for the MAIN driver.
+ * @defgroup doc_driver_utils AVR Code utility functions
  *
- * @version MAIN Driver Version 1.0.0
+ * @brief This file contains the compiler abstraction layer and code utilities for AVR.This module provides various abstraction layers and utilities to make code compatible between different compilers.
+ *
+ * @version Driver Version 1.0.1
+ * \{
+ *
 */
-
 /*
 © [2023] Microchip Technology Inc. and its subsidiaries.
 
@@ -30,29 +31,22 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
     THIS SOFTWARE.
 */
-#include "mcc_generated_files/system/system.h"
-#include <util/delay.h>
 
-/*
-    Main application
-*/
-int main(void)
-{
-    float real_var = 0.0;
-    /* Initializes MCU, drivers and middleware */
-    SYSTEM_Initialize();
-    _delay_ms(2000);
-    printf("Hello World!\n\r");
-    printf("F_CPU = %ld Hz\n\r", F_CPU);
+#ifndef UTILS_H_INCLUDED
+#define UTILS_H_INCLUDED
 
-    while (1)
-    {
-        LED_Toggle();
-        printf("real number: %f \n\r", real_var);
-        real_var = real_var + 0.5;
-        _delay_ms(1000);
-    }
-}
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
-    End of File
-*/
+ * @brief Retrieve array size
+ */
+#define ARRAY_SIZE(a) (sizeof(a) / sizeof((a)[0]))
+
+/** @} */
+
+#ifdef __cplusplus
+}
+#endif
+#endif /* UTILS_H_INCLUDED */

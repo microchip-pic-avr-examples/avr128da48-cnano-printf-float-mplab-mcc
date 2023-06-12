@@ -1,15 +1,14 @@
- /*
- * MAIN Generated Driver File
+/**
+ * CLKCTRL Generated Driver API Header File
  * 
- * @file main.c
+ * @file clkctrl.h
  * 
- * @defgroup main MAIN
+ * @defgroup  clkctrl CLKCTRL
  * 
- * @brief This is the generated driver implementation file for the MAIN driver.
+ * @brief This file contains the API prototype for the CLKCTRL driver.
  *
- * @version MAIN Driver Version 1.0.0
+ * @version CLKCTRL Driver Version 1.0.0
 */
-
 /*
 © [2023] Microchip Technology Inc. and its subsidiaries.
 
@@ -30,29 +29,23 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
     THIS SOFTWARE.
 */
-#include "mcc_generated_files/system/system.h"
-#include <util/delay.h>
 
-/*
-    Main application
-*/
-int main(void)
-{
-    float real_var = 0.0;
-    /* Initializes MCU, drivers and middleware */
-    SYSTEM_Initialize();
-    _delay_ms(2000);
-    printf("Hello World!\n\r");
-    printf("F_CPU = %ld Hz\n\r", F_CPU);
 
-    while (1)
-    {
-        LED_Toggle();
-        printf("real number: %f \n\r", real_var);
-        real_var = real_var + 0.5;
-        _delay_ms(1000);
-    }
-}
+#ifndef CLOCK_CONFIG_H
+#define CLOCK_CONFIG_H
+
+#ifndef F_CPU
+#define F_CPU 4000000
+#endif
+
+#include "ccp.h"
 /**
-    End of File
-*/
+ * @ingroup clkctrl
+ * @brief  Initializes the Clock controller.
+ * @param None.
+ * @return None.
+ * 
+ */
+void CLOCK_Initialize(void);
+
+#endif // CLOCK_CONFIG_H

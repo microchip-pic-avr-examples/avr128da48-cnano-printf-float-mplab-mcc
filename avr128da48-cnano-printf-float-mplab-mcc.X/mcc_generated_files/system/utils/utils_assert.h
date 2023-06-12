@@ -1,15 +1,14 @@
- /*
- * MAIN Generated Driver File
+/**
+ * utils_assert Header File
  * 
- * @file main.c
+ * @file utils_assert.h
  * 
- * @defgroup main MAIN
- * 
- * @brief This is the generated driver implementation file for the MAIN driver.
+ * @defgroup doc_driver_utils_assert Functionality for assert
  *
- * @version MAIN Driver Version 1.0.0
+ * @brief This file contains the generated utils_assert header file for the configuration bits driver.
+ *
+ * @version Driver Version 1.0.1
 */
-
 /*
 © [2023] Microchip Technology Inc. and its subsidiaries.
 
@@ -30,29 +29,32 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
     THIS SOFTWARE.
 */
-#include "mcc_generated_files/system/system.h"
-#include <util/delay.h>
 
-/*
-    Main application
-*/
-int main(void)
-{
-    float real_var = 0.0;
-    /* Initializes MCU, drivers and middleware */
-    SYSTEM_Initialize();
-    _delay_ms(2000);
-    printf("Hello World!\n\r");
-    printf("F_CPU = %ld Hz\n\r", F_CPU);
+#ifndef _ASSERT_H_INCLUDED
+#define _ASSERT_H_INCLUDED
 
-    while (1)
-    {
-        LED_Toggle();
-        printf("real number: %f \n\r", real_var);
-        real_var = real_var + 0.5;
-        _delay_ms(1000);
-    }
-}
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#include <stdbool.h>
+
 /**
-    End of File
-*/
+ * @brief Assert macro
+ * Macro used to throw asserts. It can be mapped to different function based on debug level.
+ * @param[in] condition A condition to be checked; assert is thrown if the given condition is false.
+ */
+
+#ifdef DEBUG
+#define ASSERT(condition)                                                                                              \
+	if (!(condition))                                                                                                  \
+		while (true)                                                                                                   \
+			;
+#else
+#define ASSERT(condition) ((void)0)
+#endif
+
+#ifdef __cplusplus
+}
+#endif
+#endif /* _ASSERT_H_INCLUDED */

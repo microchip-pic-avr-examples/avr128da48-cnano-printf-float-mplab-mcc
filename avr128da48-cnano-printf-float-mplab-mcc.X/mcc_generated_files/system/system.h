@@ -1,15 +1,14 @@
- /*
- * MAIN Generated Driver File
+/**
+ * System Driver Header File
  * 
- * @file main.c
+ * @file system.h
  * 
- * @defgroup main MAIN
+ * @defgroup systemdriver System Driver
  * 
- * @brief This is the generated driver implementation file for the MAIN driver.
+ * @brief This file contains the API prototypes for the System driver.
  *
- * @version MAIN Driver Version 1.0.0
+ * @version Driver Version 1.0.1
 */
-
 /*
 © [2023] Microchip Technology Inc. and its subsidiaries.
 
@@ -30,29 +29,33 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
     THIS SOFTWARE.
 */
-#include "mcc_generated_files/system/system.h"
-#include <util/delay.h>
 
-/*
-    Main application
-*/
-int main(void)
-{
-    float real_var = 0.0;
-    /* Initializes MCU, drivers and middleware */
-    SYSTEM_Initialize();
-    _delay_ms(2000);
-    printf("Hello World!\n\r");
-    printf("F_CPU = %ld Hz\n\r", F_CPU);
 
-    while (1)
-    {
-        LED_Toggle();
-        printf("real number: %f \n\r", real_var);
-        real_var = real_var + 0.5;
-        _delay_ms(1000);
-    }
-}
+#ifndef MCC_H
+#define	MCC_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#include "../system/utils/compiler.h"
+#include "config_bits.h"
+#include "../system/clock.h"
+#include "../system/pins.h"
+#include "../uart/usart1.h"
+#include "../system/interrupt.h"
 /**
-    End of File
+ * @ingroup systemdriver
+ * @brief Initializes the system module. This routine must be called only once during the system initialization and before any other routine is called.
+ * @param None.
+ * @return None.
+*/
+void SYSTEM_Initialize(void);
+
+#ifdef __cplusplus
+}
+#endif
+#endif	/* MCC_H */
+/**
+ End of File
 */

@@ -1,15 +1,15 @@
- /*
- * MAIN Generated Driver File
+/**
+ * CONFIGURATION BITS Generated Driver Header File
  * 
- * @file main.c
+ * @file config_bits.h
  * 
- * @defgroup main MAIN
+ * @defgroup config_bitsdriver Configuration Bits Driver 
  * 
- * @brief This is the generated driver implementation file for the MAIN driver.
+ * @brief This file contains the generated header file for the Configuration bits driver.
  *
- * @version MAIN Driver Version 1.0.0
+ * @version Driver Version 1.0.0
 */
-
+    
 /*
 © [2023] Microchip Technology Inc. and its subsidiaries.
 
@@ -30,29 +30,13 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
     THIS SOFTWARE.
 */
-#include "mcc_generated_files/system/system.h"
-#include <util/delay.h>
 
-/*
-    Main application
-*/
-int main(void)
-{
-    float real_var = 0.0;
-    /* Initializes MCU, drivers and middleware */
-    SYSTEM_Initialize();
-    _delay_ms(2000);
-    printf("Hello World!\n\r");
-    printf("F_CPU = %ld Hz\n\r", F_CPU);
+#ifndef CONFIG_BITS_H
+#define	CONFIG_BITS_H
 
-    while (1)
-    {
-        LED_Toggle();
-        printf("real number: %f \n\r", real_var);
-        real_var = real_var + 0.5;
-        _delay_ms(1000);
-    }
-}
+#include "../system/clock.h"
+
+#endif //CONFIG_BITS_H
 /**
-    End of File
+ End of File
 */

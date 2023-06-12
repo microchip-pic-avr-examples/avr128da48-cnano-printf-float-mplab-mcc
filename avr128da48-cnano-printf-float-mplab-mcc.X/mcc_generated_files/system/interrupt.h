@@ -1,13 +1,13 @@
- /*
- * MAIN Generated Driver File
+/**
+ * Interrupt Manager Generated Driver API Header File.
  * 
- * @file main.c
+ * @file interrupt.h
  * 
- * @defgroup main MAIN
+ * @defgroup interrupt INTERRUPT
  * 
- * @brief This is the generated driver implementation file for the MAIN driver.
+ * @brief This file contains the API prototype for the Interrupt Manager.
  *
- * @version MAIN Driver Version 1.0.0
+ * @version Interrupt Manager Driver Version 1.0.0
 */
 
 /*
@@ -30,29 +30,28 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
     THIS SOFTWARE.
 */
-#include "mcc_generated_files/system/system.h"
-#include <util/delay.h>
 
-/*
-    Main application
-*/
-int main(void)
-{
-    float real_var = 0.0;
-    /* Initializes MCU, drivers and middleware */
-    SYSTEM_Initialize();
-    _delay_ms(2000);
-    printf("Hello World!\n\r");
-    printf("F_CPU = %ld Hz\n\r", F_CPU);
 
-    while (1)
-    {
-        LED_Toggle();
-        printf("real number: %f \n\r", real_var);
-        real_var = real_var + 0.5;
-        _delay_ms(1000);
-    }
-}
+#ifndef INTERRUPT_H
+#define INTERRUPT_H
+
+#include "../system/utils/compiler.h"
+#include "ccp.h"
+#include "../system/utils/atomic.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif 
+
 /**
-    End of File
-*/
+ * @ingroup interrupt
+ * @brief Initializes the Interrupt module.
+ * @retval 0 - Initialization is successful.
+ */
+int8_t CPUINT_Initialize();
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* INTERRUPT_H */
