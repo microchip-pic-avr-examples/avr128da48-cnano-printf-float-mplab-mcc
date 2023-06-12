@@ -54,11 +54,11 @@ To program the Curiosity Nano board with this MPLAB® X project, follow the step
 ## Demo:
 Using Control Panel or the system's configuration tool, identify the serial port number allocated by the OS (COMx, ttySx, etc).
 
-Open the terminal software (Microchip Data Visualizer, putty, teraterm, minicom, etc), choose 115200 8N1 format, then connect to the appropriate serial port.
+Open Microchip Data Visualizer, choose 115200 format, then connect to the appropriate serial port.
 
 At the start a message with 'Hello World!' and on the next line is shown the CPU frequency. Then, the on-board LED starts toggling once a second, while the serial terminal displays an incrementing floating point number.
 
-<br><img src="images/terminal_software.png">
+<br><img src="images/data_visualizer.png">
 
 This image shows the received messages from the start of the program. The program will continuously increment the value with 0.5 every second.
 
