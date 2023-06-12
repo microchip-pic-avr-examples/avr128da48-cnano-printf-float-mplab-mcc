@@ -58,7 +58,7 @@ Open Microchip Data Visualizer, choose 115200 format, then connect to the approp
 
 At the start a message with 'Hello World!' and on the next line is shown the CPU frequency. Then, the on-board LED starts toggling once a second, while the serial terminal displays an incrementing floating point number.
 
-<br><img src="images/data_visualizer.png">
+<br><img src="images/data_visualizer.png" width="600">
 
 This image shows the received messages from the start of the program. The program will continuously increment the value with 0.5 every second.
 
