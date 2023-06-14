@@ -1,10 +1,8 @@
-<!-- Please do not change this html logo with link -->
-
 <a href="https://www.microchip.com" rel="nofollow"><img src="images/microchip.png" alt="MCHP" width="300"/></a>
 
-# AVR128DA48 Demo of `printf` With Floating Point Numbers Using USART and MCC
+# AVR128DA48 - Demo of `printf` with floating point numbers using serial communication and MCC Melody
 
-This repository provides an MPLAB® X solution for a basic `printf` demo using the USART interface to demonstrate the floating point usage.<br>
+This repository provides an MCC Melody generated MPLAB® solution for a basic `printf` demo using the USART interface to demonstrate the floating point usage.<br>
 
 This application provides an example use of floating point numbers. It prints on the serial value incremented by 0.5 and toggles the on-board LED every second.
 
@@ -16,6 +14,7 @@ More details and code examples on the AVR128DA48 can be found at the following l
 
 ## Software Used
 - [MPLAB® X IDE](http://www.microchip.com/mplab/mplab-x-ide) v6.10 or newer
+- [MPLAB® Code Configurator v5.3.7 or newer](https://www.microchip.com/mplab/mplab-code-configurator)
 - [MPLAB® XC8](http://www.microchip.com/mplab/compilers) v2.41 or newer
 - [AVR-Dx Series Device Pack](https://packs.download.microchip.com/) v2.3.272 or newer
 - [MPLAB® Code Configurator Melody](https://www.microchip.com/en-us/tools-resources/configure/mplab-code-configurator/melody) v2.5.0 or newer
@@ -39,11 +38,11 @@ The following configurations must be made for this project:
 	- no parity bit
 	- 1 stop bit
 
-|Pin           | Configuration      |
-| :----------: | :----------------: |
-|PC6 (LED0)    | Digital Output     |
-|PC0 (USART_TX)| Digital Output     |
-|PC1 (USART_RX)| Digital Input      |
+|Pin            | Configuration      |
+| :----------:  | :----------------: |
+|PC6 (LED0)     | Digital Output     |
+|PC0 (USART1_TX)| Digital Output     |
+|PC1 (USART1_RX)| Digital Input      |
 
 
 
