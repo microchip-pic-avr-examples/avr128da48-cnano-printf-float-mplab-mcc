@@ -37,12 +37,6 @@
             }
         },
         "author": "Microchip",
-        "subcategories": [
-			[
-				"Peripherals",
-				"USART"
-			]
-		],
         "peripherals": [ "UART"
         ],
         "keywords": [ "Serial Communication"
