@@ -1,10 +1,10 @@
 <a href="https://www.microchip.com" rel="nofollow"><img src="images/microchip.png" alt="MCHP" width="300"/></a>
 
-# AVR128DA48 - Demo of `printf` with floating point numbers using serial communication and MCC Melody
+# AVR128DA48 - Demo of printf With Floating Point Numbers Using USART and MCC Melody
 
 This repository provides an MCC Melody generated MPLAB® solution for a basic `printf` demo using the USART interface to demonstrate the floating point usage.<br>
 
-This application provides an example use of floating point numbers. It prints on the serial value incremented by 0.5 and toggles the on-board LED every second.
+This application shows an example of how to handle and print floating point numbers. It prints on the serial value incremented by 0.5 and toggles the on-board LED every second.
 
 ## Related Documentation
 More details and code examples on the AVR128DA48 can be found at the following links:
@@ -26,7 +26,7 @@ More details and code examples on the AVR128DA48 can be found at the following l
 - AVR128DA48 Curiosity Nano [(DM164151)](https://www.microchip.com/Developmenttools/ProductDetails/DM164151)
 
 ## Setup
-The AVR128DA48 Curiosity Nano Development board is used as test platform.
+The AVR128DA48 Curiosity Nano Development board is used as a test platform.
 <br><img src="images/AVR128DA48_CNANO_instructions.png" width="500">
 
 The following configurations must be made for this project:
@@ -53,9 +53,9 @@ To program the Curiosity Nano board with this MPLAB® X project, follow the step
 ## Demo:
 Using Control Panel or the system's configuration tool, identify the serial port number allocated by the OS (COMx, ttySx, etc).
 
-Open Microchip Data Visualizer, choose 115200 format, then connect to the appropriate serial port.
+Open Microchip Data Visualizer, choose the 115200 format, then connect to the appropriate serial port.
 
-At the start a message with 'Hello World!' and on the next line is shown the CPU frequency. Then, the on-board LED starts toggling once a second, while the serial terminal displays an incrementing floating point number.
+A message with "Hello World!" will appear on the first line and the next one shows the CPU frequency. Then, the on-board LED starts toggling once per second, while the serial terminal displays an incrementing floating point number.
 
 <br><img src="images/data_visualizer.png" width="600">
 
